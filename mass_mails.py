@@ -5,7 +5,7 @@ import sys, traceback
 sys.path.insert(0, '../')
 import re
 import smtplib
-import datetime, time
+import time
 
 # Добавляем подклассы - MIME-типов
 from email.mime.multipart import MIMEMultipart
@@ -24,9 +24,6 @@ try:
 		elif match:
 			To = match.group(0)
 
-			today = datetime.datetime.today()
-			dattime = str(today.strftime("%Y-%m-%d %H:%M:%S"))
-			
 			msg = MIMEMultipart()
 			msg['From']    = From
 			msg['To']      = To
